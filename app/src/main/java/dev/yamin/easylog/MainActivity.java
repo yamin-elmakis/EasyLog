@@ -1,71 +1,44 @@
 package dev.yamin.easylog;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
 
 import lib.yamin.easylog.EasyLog;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EasyLog.showLogs(true);
-        EasyLog.e();
-//        EasyLog.e(new RuntimeException("test Exception"));
+        EasyLog.showLogs(BuildConfig.DEBUG);
+        EasyLog.setDefaultText("default");
+        EasyLog.setTag("Logger");
 
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Test test = new Test();
-        test.test();
+        EasyLog.d();
+        EasyLog.e(new RuntimeException("Exception example"));
+        InnerClass test = new InnerClass();
+        test.log();
+
+        findViewById(R.id.main_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EasyLog.d();
+            }
+        });
     }
 
-    class Test {
+    private class InnerClass {
 
-        void test(){
-            EasyLog.e(this);
+        void log(){
+            EasyLog.i(this);
         }
 
         @Override
         public String toString() {
-            return "TestClass{}";
+            return "InnerClass{}";
         }
     }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            EasyLog.e(item.getTitle().toString());
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_home2:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-                case R.id.navigation_notifications2:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-
-    };
 }
