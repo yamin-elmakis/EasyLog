@@ -2,6 +2,34 @@
 Easy to use and lightweight logger for Android
 print the caller [class name][method name][line number] from the StackTrace
 
+### Integration
+
+you can add this Lib from [GitPack.io](https://jitpack.io/#yamin-elmakis/EasyLog)
+
+Gradle:
+Add GitPack in your root build.gradle
+
+``` xml
+
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+        }
+    }
+
+```
+
+Then add the dependency
+
+``` xml
+
+dependencies {
+    ...
+    compile 'com.github.yamin-elmakis:EasyLog:v1.1'
+}
+
+```
 
 ### Usage
 
@@ -55,10 +83,13 @@ examples:
 ```
 
 Default log:
-D/Logger: [MainActivity][onCreate()][20]=> default
+``` java
+    D/Logger: [MainActivity][onCreate()][20]=> default
+```
 
 Log Exception:
-E/Logger: [MainActivity][onCreate()][21]=> Exception example
+``` java
+    E/Logger: [MainActivity][onCreate()][21]=> Exception example
           java.lang.RuntimeException: Exception example
               at dev.yamin.easylog.MainActivity.onCreate(MainActivity.java:23)
               at android.app.Activity.performCreate(Activity.java:6662)
@@ -73,9 +104,14 @@ E/Logger: [MainActivity][onCreate()][21]=> Exception example
               at java.lang.reflect.Method.invoke(Native Method)
               at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:866)
               at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:756)
+```
 
 Inner Class example:
-I/Logger: [MainActivity$InnerClass][log()][36]=> InnerClass{}
+``` java
+    I/Logger: [MainActivity$InnerClass][log()][36]=> InnerClass{}
+```
 
 Anonymous Inner Class example:
-D/Logger: [MainActivity$1][onClick()][28]=> default
+``` java
+    D/Logger: [MainActivity$1][onClick()][28]=> default
+```
