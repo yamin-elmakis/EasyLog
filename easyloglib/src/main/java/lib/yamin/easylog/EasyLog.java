@@ -40,13 +40,13 @@ public class EasyLog {
 
     public static void v(Object msg) {
         if (showLogs) {
-            logV(msg.toString(), null);
+            logV(msg == null ? "null" : msg.toString(), null);
         }
     }
 
     public static void v(Object msg, Throwable throwable) {
         if (showLogs) {
-            logV(msg.toString(), throwable);
+            logV(msg == null ? "null" : msg.toString(), throwable);
         }
     }
 
@@ -69,13 +69,13 @@ public class EasyLog {
 
     public static void d(Object msg) {
         if (showLogs) {
-            logD(msg.toString(), null);
+            logD(msg == null ? "null" : msg.toString(), null);
         }
     }
 
     public static void d(Object msg, Throwable throwable) {
         if (showLogs) {
-            logD(msg.toString(), throwable);
+            logD(msg == null ? "null" : msg.toString(), throwable);
         }
     }
 
@@ -98,13 +98,13 @@ public class EasyLog {
 
     public static void i(Object msg) {
         if (showLogs) {
-            logI(msg.toString(), null);
+            logI(msg == null ? "null" : msg.toString(), null);
         }
     }
 
     public static void i(Object msg, Throwable throwable) {
         if (showLogs) {
-            logI(msg.toString(), throwable);
+            logI(msg == null ? "null" : msg.toString(), throwable);
         }
     }
 
@@ -127,13 +127,13 @@ public class EasyLog {
 
     public static void w(Object msg) {
         if (showLogs) {
-            logW(msg.toString(), null);
+            logW(msg == null ? "null" : msg.toString(), null);
         }
     }
 
     public static void w(Object msg, Throwable throwable) {
         if (showLogs) {
-            logW(msg.toString(), throwable);
+            logW(msg == null ? "null" : msg.toString(), throwable);
         }
     }
 
@@ -156,13 +156,13 @@ public class EasyLog {
 
     public static void e(Object msg) {
         if (showLogs) {
-            logE(msg.toString(), null);
+            logE(msg == null ? "null" : msg.toString(), null);
         }
     }
 
     public static void e(Object msg, Throwable throwable) {
         if (showLogs) {
-            logE(msg.toString(), throwable);
+            logE(msg == null ? "null" : msg.toString(), throwable);
         }
     }
 
