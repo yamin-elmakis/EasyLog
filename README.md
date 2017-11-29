@@ -26,7 +26,7 @@ Then add the dependency
 
 dependencies {
     ...
-    compile 'com.github.yamin-elmakis:EasyLog:v1.1'
+    compile 'com.github.yamin-elmakis:EasyLog:v1.4'
 }
 
 ```
