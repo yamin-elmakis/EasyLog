@@ -15,6 +15,7 @@ public class EasyLog {
     private static String defaultText = "Here";
     private static boolean showLogs = false;
     private static int CLASS_LEVEL = 5;
+    private static EasyLogFormatter formatter = new DefaultFormatter();
 
     public static void showLogs(boolean debug) {
         showLogs = debug;
@@ -22,6 +23,10 @@ public class EasyLog {
 
     public static void setTag(String pTag) {
         tag = pTag;
+    }
+
+    public static void setFormatter(EasyLogFormatter logFormatter) {
+        formatter = logFormatter;
     }
 
     public static String getDefaultText() {
@@ -188,6 +193,6 @@ public class EasyLog {
         String[] split = fullClassName.split("\\.");
         String simpleClassName = split[split.length - 1];
 
-        return String.format("[%s][%s()][%s]=> ", simpleClassName, element.getMethodName(), element.getLineNumber());
+        return formatter.format(simpleClassName, element.getMethodName(), element.getLineNumber());
     }
 }
