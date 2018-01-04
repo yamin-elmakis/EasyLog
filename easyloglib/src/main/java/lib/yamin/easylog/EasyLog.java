@@ -10,7 +10,6 @@ import android.util.Log;
  * accept Object so if the showLogs = false it won't waist a toString() on a complex Object
  */
 public class EasyLog {
-
     private static String tag = "EasyLog";
     private static String defaultText = "Here";
     private static boolean showLogs = false;
