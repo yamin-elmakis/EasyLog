@@ -56,7 +56,7 @@ set a custom formatter
 
 ```
 
-examples:
+### examples:
 
 ``` java
 
@@ -65,15 +65,15 @@ examples:
         .
         .
         .
-        EasyLog.d();
-        EasyLog.e(new RuntimeException("Exception example"));
+        EasyLog.d(); // line 20 in the IDE
+        EasyLog.e(new RuntimeException("Exception example")); // line 21 in the IDE
         InnerClass test = new InnerClass();
         test.log();
 
         findViewById(R.id.main_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyLog.d();
+                EasyLog.d(); // line 28 in the IDE
             }
         });
         .
@@ -84,7 +84,7 @@ examples:
     private class InnerClass {
 
         void log(){
-            EasyLog.i(this);
+            EasyLog.i(this); // line 36 in the IDE
         }
 
         @Override
