@@ -26,7 +26,7 @@ Then add the dependency
 
 dependencies {
     ...
-    compile 'com.github.yamin-elmakis:EasyLog:v1.4'
+    compile 'com.github.yamin-elmakis:EasyLog:v1.5'
 }
 
 ```
@@ -40,6 +40,19 @@ enable and init the logger
     EasyLog.showLogs(BuildConfig.DEBUG);
     EasyLog.setDefaultText("default");
     EasyLog.setTag("Logger");
+
+```
+
+set a custom formatter
+
+``` java
+
+    EasyLog.setFormatter(new EasyLogFormatter() {
+        @Override
+        public String format(String classname, String methodName, int lineNumber) {
+            return String.format("[%s] %s.%s() => ", lineNumber, classname, methodName);
+        }
+    });
 
 ```
 

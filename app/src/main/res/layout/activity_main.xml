@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="anonymous inner class example"/>
 
+    <Button
+        android:id="@+id/main_btn_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Formatter"/>
+
 </LinearLayout>
