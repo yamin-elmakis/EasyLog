@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/EasyLog.iml" filepath="$PROJECT_DIR$/.idea/EasyLog.iml" />
-      <module fileurl="file://C:\Android\EasyLog\EasyLog.iml" filepath="C:\Android\EasyLog\EasyLog.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/easyloglib/easyloglib.iml" filepath="$PROJECT_DIR$/easyloglib/easyloglib.iml" />
     </modules>
